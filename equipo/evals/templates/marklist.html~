@@ -1,0 +1,25 @@
+<html>
+    <head>
+       <style type="text/css">
+	.eval{position:absolute;color:white;}
+        <meta charset="utf-8">
+        <title>file upload</title>   
+    </head>
+    <body>
+    <!-- List of uploaded documents -->
+    {% if m %}
+        <table border=1>
+        <tr>
+		<th>name</th><th>marks</th>
+	</tr>
+        {% for mar in m %}
+            <tr><td>{{ mar.name }}</td> <td>{{ mar.marks }}</td></tr>
+        {% endfor %}
+        </table>
+    {% else %}
+<div style='position:absolute;z-index:0;left:0;top:0;width:100%;height:100%'>
+  <img src="{{MEDIA_URL}}noeval.jpg" style='width:100%;height:100%' alt='[]' />
+</div> 
+        <p class=eval>Evaluations are not done yet.</p>
+    {% endif %}
+</html>

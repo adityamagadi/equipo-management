@@ -1,0 +1,20 @@
+<html>
+<head>
+  <style type="text/css">
+  .up{position:relative;color:white}
+ </style>
+<div style='position:absolute;z-index:0;left:0;top:0;width:100%;height:100%'>
+  <img src="{{MEDIA_URL}}upload1.jpg" style='width:100%;height:100%' alt='[]' />
+</div> 
+<form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p class=up>{{ form.non_field_errors }}</p>
+            <p class=up>{{ form.synfile.label_tag }} {{ form.synfile.help_text }}</p>
+            <p class=up>
+                {{ form.synfile.errors }}
+                {{ form.synfile }}
+            </p>
+            <p class=up><input type="submit" value="Upload" /></p>
+        </form>
+    </body>
+</html> 

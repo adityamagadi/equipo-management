@@ -1,0 +1,40 @@
+<html>
+<head>
+<style type="text/css">
+.name1{position:absolute;top:0;color:white}
+.name2{position:absolute;top:40;color:white}
+.advicebox{position:absolute;top:100;}
+.butt1{position:absolute;top:290;left:0;}
+</style>
+<script type="text/javascript">
+function instr()
+{
+alert("Pls read the instructions appearing in the text area while filling the form");
+}
+var msg=["Enter only alphabets","Pls enter only numerals"];
+function msgs(msgno)
+{
+document.getElementById("advicebox").value=msg[msgno];
+}
+</script>
+</head>
+<body onload="instr()">
+<div style='position:absolute;z-index:0;left:0;top:0;width:100%;height:100%'>
+  <img src="{{MEDIA_URL}}hodevaluation.png" style='width:100%;height:100%' alt='[]' />
+</div> 
+<form action="" method="post" >
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}</p>
+            
+            <p>
+                {{ form.evalform.errors }}
+                <p class="name1" onclick="javascript:msgs(0);" >Name:{{ form.name }}</p>
+	        <p class="name2" onclick="javascript:msgs(1);">Marks:{{ form.marks }}</p>
+            </p>
+            <p ><input class="butt1" type="submit" value="Upload" /></p>
+        </form>
+	<textarea class="advicebox" id="advicebox" rows="10" cols="30">
+
+	</textarea>
+    </body>
+</html> 

@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>hod-dash</title>
+	<style type="text/css">
+	.b1{position:absolute;left:100;top:60;}
+	</style>
+</head>
+<frameset  rows="15%,*">
+    <frame scrolling="no" src="banner.html" />
+    <frameset cols="20%,*">
+        <frame scrolling="no" src="options2.html" /> 
+        <frame scrolling="yes" src="something.html" name="desc" />
+    </frameset>
+    
+     <a class="b1" href="/">logout</a>
+</frameset>
+</html>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>guide-dash</title>
+        <style type="text/css">
+            p{font-size:25;}
+            .hyp{position:relative;color:white;}
+        </style>
+    </head>
+    <body >
+	<div style='position:absolute;z-index:0;left:0;top:0;width:100%;height:100%'>
+  <img src="{{MEDIA_URL}}dash4.png" style='width:100%;height:100%' alt='[]' />
+</div>
+        <p><a class="hyp" href="createdsynopsis.html" target="desc" STYLE="TEXT-DECORATION: NONE">View-Synopsis</a></p>
+        <br /><br />
+        <p><a class="hyp" href="uploads.html" target="desc" STYLE="TEXT-DECORATION: NONE">File-Management</a></p>
+        <br /><br />
+        <p><a class="hyp" href="guideevaluation.html" target="desc" STYLE="TEXT-DECORATION: NONE">Make-Evaluations</a></p>
+        <br /><br />
+        <p><a class="hyp" href="generalforum.html" target="desc" STYLE="TEXT-DECORATION: NONE">Forum</a></p>
+        <br /><br />
+        
+        
+        
+        
+       
+        
+    </body>
+</html>

@@ -1,0 +1,7 @@
+from django import forms
+
+class synform(forms.Form):
+	synfile=forms.FileField(
+	     label='select a file',
+	     help_text='Please choose your file path to upload synopsis here'
+	)

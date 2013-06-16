@@ -1,0 +1,41 @@
+<html>
+    <head>
+ <style type="text/css">
+.tab2{position:absolute;}	
+.eval{position:absolute;color:white;}
+       </style>
+        <meta charset="utf-8">
+        <title>marks list</title>   
+    </head>
+    <body>
+    
+    {% if g %}
+ <div style='position:absolute;z-index:0;left:0;top:0;width:100%;height:100%'>
+  <img src="{{MEDIA_URL}}vieweval.png" style='width:100%;height:100%' alt='[]' />
+</div> 
+        <table class="tab2" border=1>
+               <tr> 
+               <th>name</th>
+               <th>usn</th>
+	       <th>project name</th>
+	       <th>marks</th> 
+               </tr>
+               {% for gs in g %}
+               <tr> 
+               <td>{{ gs.name1 }}</td><td>{{ gs.usn1 }}</td><td rowspan=4>{{ gs.projectname }}</td><td>{{ gs.marks1 }}</td></tr> 
+		<tr> 
+               <td>{{ gs.name2 }}</td><td>{{ gs.usn2 }}</td><td>{{ gs.marks2 }}</td></tr> 
+		<tr> 
+               <td>{{ gs.name3 }}</td><td>{{ gs.usn3 }}</td><td>{{ gs.marks3 }}</td></tr> 
+		<tr> 
+               <td>{{ gs.name4 }}</td><td>{{ gs.usn4 }}</td><td>{{ gs.marks4 }}</td></tr> 
+		
+	{% endfor %}
+        </table>
+    {% else %}
+        <div style='position:absolute;z-index:0;left:0;top:0;width:100%;height:100%'>
+  <img src="{{MEDIA_URL}}noeval.jpg" style='width:100%;height:100%' alt='[]' />
+</div> 
+        <p class="eval">Your marks are not yet evaluated.</p>
+    {% endif %}
+</html>

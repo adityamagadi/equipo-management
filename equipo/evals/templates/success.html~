@@ -1,0 +1,10 @@
+<html>
+<head>
+<style type="text/css">
+.succ{position:relative;left:250;top:150;color:white;font-size:50pt}
+</style>
+</head>
+<body bgcolor=black>
+<p class="succ">success!!!</p>
+</body>
+</html>

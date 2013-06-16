@@ -1,0 +1,65 @@
+<html>
+<head>
+<style type="text/css">
+.para1{position:absolute;top:0;left:350;}
+.para2{position:absolute;top:0;left:650;}
+.para3{position:absolute;top:40;left:350}
+.para4{position:absolute;top:40;left:650}
+.para5{position:absolute;top:80;left:350}
+.para6{position:absolute;top:80;left:650}
+.para7{position:absolute;top:120;left:350}
+.para8{position:absolute;top:120;left:650}
+</style>
+<script type="text/javascript">
+var helpers = ["enter only alphabets, if less than 4 members fill as N/A","enter a valid usn for example:1OX09CS078","enter numerals only, if less than 4 member enter 0"]
+
+function msgs(adviceno) 
+{
+	document.getElementById("advicebox").value=helpers[adviceno];
+}
+function instr()
+{
+alert("pls read the instructions appearing in the textbox while filling the form");
+}
+</script>
+<div style='position:absolute;z-index:0;left:500;top:300;width:50%;height:50%'>
+  <img src="{{MEDIA_URL}}eval.jpg" style='width:100%;height:100%' alt='[]' />
+</div> 
+<body>
+<form action="" method="post" >
+            {% csrf_token %}
+            <p >{{ form.non_field_errors }}</p>
+            
+            
+                {{ form.evalform.errors }}
+                <p onclick="javascript:msgs('0');">Name1:{{ form.name1}}</p>
+		<p class="para1" onclick="javascript:msgs('1');">USN1:{{ form.usn1}}</p>
+                <p class="para2" onclick="javascript:msgs('2');">Marks1:{{ form.marks1 }}</p>
+                
+               
+		<p onclick="javascript:msgs('0');">Name2:{{ form.name2}}<p>
+	        
+                <p class="para3" onclick="javascript:msgs('1');">USN2:{{ form.usn2}}</p>
+	        <p class="para4"onclick="javascript:msgs('2');">Marks2:{{ form.marks2 }}</p>
+                 <p onclick="javascript:msgs('0');"> Name3:{{ form.name3}}</p>
+		<p class="para5" onclick="javascript:msgs('1');">USN3:{{ form.usn3}}</p>
+                <p class="para6" onclick="javascript:msgs('2');">Marks3:{{ form.marks3 }}</p>
+                
+                
+		
+                <p onclick="javascript:msgs('0');">Name4:{{ form.name4}}</p>
+                
+	       <p class="para7" onclick="javascript:msgs('1');">USN4:{{ form.usn4}}</p>
+	        <p class="para8" onclick="javascript:msgs('2');">Marks4:{{ form.marks4 }}</p>
+                  <p>Project Name:{{form.projectname}}</p>
+                
+		<textarea id="advicebox" rows="10" cols="50">
+
+                    
+
+                </textarea>
+            
+            <p><input type="submit" value="Upload" /></p>
+        </form>
+    </body>
+</html> 

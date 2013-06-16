@@ -1,0 +1,30 @@
+<html>
+    <head>
+       <style type="text/css">
+.tab1{position:absolute;}	
+.eval{position:absolute;color:white;}
+       </style>
+        <meta charset="utf-8">
+        <title>marks list</title>   
+    </head>
+    <body>
+    
+    {% if m %}
+<div style='position:absolute;z-index:0;left:0;top:0;width:100%;height:100%'>
+  <img src="{{MEDIA_URL}}vieweval.png" style='width:100%;height:100%' alt='[]' />
+</div> 
+        <table class="tab1"border=1>
+        <tr>
+		<th>name</th><th>marks</th>
+	</tr>
+        {% for mar in m %}
+            <tr><td>{{ mar.name }}</td> <td>{{ mar.marks }}</td></tr>
+        {% endfor %}
+        </table>
+    {% else %}
+<div style='position:absolute;z-index:0;left:0;top:0;width:100%;height:100%'>
+  <img src="{{MEDIA_URL}}noeval.jpg" style='width:100%;height:100%' alt='[]' />
+</div> 
+        <p class=eval>Evaluations are not done yet.</p>
+    {% endif %}
+</html>

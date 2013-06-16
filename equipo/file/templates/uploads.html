@@ -1,0 +1,24 @@
+<html>
+    <head>
+         <style type="text/css">
+	.n{color:white;}
+     </style>
+        <meta charset="utf-8">
+        <title>file upload</title>   
+    </head>
+    <body bgcolor=black>
+    <!-- List of uploaded documents -->
+    {% if documents %}
+	 <div style='position:absolute;z-index:0;left:500;top:250;width:50%;height:50%'>
+  <img src="{{MEDIA_URL}}files1.png" style='width:100%;height:100%' alt='[]' />
+</div> 
+        <ol>
+        {% for document in documents %}
+            <li class="n"><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <p>No documents.</p>
+    {% endif %}
+
+</html>

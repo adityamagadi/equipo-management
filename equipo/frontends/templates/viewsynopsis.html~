@@ -1,0 +1,25 @@
+<html>
+    <head>
+        
+           
+        <title>
+             View Synopsis 
+        </title>
+        
+    </head>
+    <body bgcolor="pink">
+        <h1>View Synopsis</h1>
+        <form>
+            <p><label>Team Name:<input type="text" name="teamname" value="" /></label></p>
+                  
+        </form>
+        
+        
+    </body>
+    
+    
+    
+</html>
+
+
+

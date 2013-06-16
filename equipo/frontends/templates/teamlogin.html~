@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style='position:absolute;z-index:0;left:0;top:0;width:100%;height:100%'>
+  <img src="{{MEDIA_URL}}hl2.png" style='width:100%;height:100%' alt='[]' />
+</div>
+<form action="" method="post">
+{% csrf_token %}
+{% if form.errors %}<p>Please correct the following fields:</p>{% endif %}
+<div class="register_div1">
+        {% if form.username.errors %}<p class="error">{{ form.username.errors }}</p>{% endif %}
+        <p><label for="username"{% if form.username.errors %} class="error"{% endif %}>Username:</label></p>
+        <p>{{ form.username }}</p>
+</div>
+
+<div class="register_div2">
+        {% if form.password.errors %}<p class="error">{{ form.password.errors }}</p>{% endif %}
+        <p><label for="password"{% if form.password.errors %} class="error"{% endif %}>Password:</label></p>
+        <p>{{ form.password }}</p>
+</div>
+<div class="register_div3">
+        {% if form.AuthID.errors %}<p class="error">{{ form.AuthID.errors }}</p>{% endif %}
+        <p><label for="password"{% if form.AuthID.errors %} class="error"{% endif %}>AuthID:</label></p>
+        <p>{{ form.AuthID }}</p>
+</div>
+<input class="register_div4"  type="submit" value="submit" name="submit" />
+</form>
+<p><a class="hyper" href="/" STYLE="TEXT-DECORATION: NONE">Click here for Equipo Home</a></p>
+{% endblock %}

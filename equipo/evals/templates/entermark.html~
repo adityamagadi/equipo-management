@@ -1,0 +1,34 @@
+<html>
+<head>
+<script type="text/javascript">
+function instr()
+{
+alert("Pls read the instructions appearing in the text area while filling the form");
+}
+var msg=["Enter only alphabets","Pls enter only numerals"];
+function msgs(msgno)
+{
+document.getElementById("advicebox").value=msg[msgno];
+}
+</script>
+</head>
+<body onload="instr()">
+<div style='position:absolute;z-index:0;left:300;top:100;width:50%;height:50%'>
+  <img src="{{MEDIA_URL}}hodmarks.jpg" style='width:100%;height:100%' alt='[]' />
+</div> 
+<form action="" method="post" >
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}</p>
+            
+            <p>
+                {{ form.evalform.errors }}
+                <p onclick="javascript:msgs(0);" >name:{{ form.name }}</p>
+	        <p onclick="javascript:msgs(1);">marks:{{ form.marks }}</p>
+            </p>
+            <p><input type="submit" value="Upload" /></p>
+        </form>
+	<textarea id="advicebox" rows="10" cols="30">
+
+	</textarea>
+    </body>
+</html> 
